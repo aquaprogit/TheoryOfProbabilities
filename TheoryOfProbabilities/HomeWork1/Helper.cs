@@ -43,12 +43,12 @@ static class Helper
         result -= 3;
         return result;
     }
-    public static int Mediana(List<int> values)
+    public static double Mediana(List<double> values)
     {
         var ordered = values.Order().ToList();
         return (ordered[ordered.Count / 2] + ordered[ordered.Count / 2 + 1]) / 2;
     }
-    public static double[] EmpiricalDistributionFunction(int[] data)
+    public static double[] EmpiricalDistributionFunction(double[] data)
     {
         Array.Sort(data);
 

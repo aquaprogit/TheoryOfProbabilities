@@ -1,10 +1,12 @@
 ﻿using static HomeWork1.Helper;
 
-var givenValues = new List<int>()
+var givenValues = new List<double>()
 {
-    59, 55, 60, 46, 57, 54, 57, 54, 55, 46,
-    57, 59, 57, 46, 54, 55, 57, 59, 54, 54,
-    46, 55, 57, 60, 55, 54, 46, 55, 57, 54
+0.87, 0.94, 0.99, 0.90, 0.94, 0.87, 0.85, 0.85, 0.87, 0.90, 0.94, 0.85, 0.99, 0.90, 0.94,
+
+0.90, 0.90, 0.87, 0.87, 0.82, 0.90, 0.94, 0.81, 0.82, 0.81, 0.87, 0.85, 0.82, 0.97, 0.81,
+
+0.85, 0.87, 0.94, 0.90, 0.87, 0.97, 0.90, 0.82, 0.85, 0.87
 };
 
 var orderedGiven = givenValues.Order();
@@ -58,7 +60,7 @@ Console.WriteLine("8) ");
 Console.WriteLine($"\tMode: {orderedDistinct[counts.IndexOf(counts.Max())]}");
 Console.WriteLine($"\tMedian: {Mediana(givenValues)}");
 
-var nums = orderedDistinct.Select(i => (double)i).ToList();
+var nums = orderedDistinct.ToList();
 var m = M(nums, probs);
 var d = D(nums, probs);
 var o = Math.Sqrt(d);
@@ -71,4 +73,7 @@ Console.WriteLine($"\to(x) = {o:#.#####}");
 Console.WriteLine($"\tAs(x) = {ass:#.#####}");
 Console.WriteLine($"\tEs(x) = {es:#.#####}");
 
+
+Console.WriteLine("Extra)");
+Console.WriteLine("\tMax - min: " + Math.Abs(orderedDistinct.First() - orderedDistinct.Last()));
 Console.ReadLine();
